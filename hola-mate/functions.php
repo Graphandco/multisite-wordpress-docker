@@ -21,18 +21,15 @@ function theme_enqueue_styles() {
 //     return $new_text;
 // }
 
-function custom_elementor_admin_css() {
-    // On cible seulement la page Elementor editor
-    $screen = get_current_screen();
-    if ( isset($screen->id) && $screen->id === 'elementor_page' ) {
-        echo '<style>
-            #elementor-panel-state-loading {
-                display: none !important;
-            }
-        </style>';
+add_action('admin_head', 'override_backoffice_css');
+
+function override_backoffice_css() {
+    echo '<style>
+    #elementor-panel-state-loading {
+        display: none !important;
     }
+</style>';
 }
-add_action('admin_head', 'custom_elementor_admin_css');
 
 
 
