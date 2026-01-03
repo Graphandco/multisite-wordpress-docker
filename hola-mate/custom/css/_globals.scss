@@ -232,10 +232,3 @@ body:not(.elementor-editor-active) {
 /*** SMARTPHONE SIZE ***/
 @media screen and (max-width: 767px) {
 }
-
-/***********************
-    Hide elementor loading
-***********************/
-#elementor-panel-state-loading {
-   display: none !important;
-}

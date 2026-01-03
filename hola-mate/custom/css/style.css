@@ -227,13 +227,6 @@ body:not(.elementor-editor-active) .transform-opacity {
 }
 
 /*** SMARTPHONE SIZE ***/
-/***********************
-    Hide elementor loading
-***********************/
-#elementor-panel-state-loading {
-  display: none !important;
-}
-
 a.add_to_cart_button {
   text-align: center;
   text-transform: uppercase;
