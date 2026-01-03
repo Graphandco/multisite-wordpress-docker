@@ -21,15 +21,13 @@ function theme_enqueue_styles() {
 //     return $new_text;
 // }
 
-add_action('admin_head', 'override_backoffice_css');
-
-function override_backoffice_css() {
+add_action('elementor/editor/after_enqueue_styles', function() {
     echo '<style>
-    #elementor-panel-state-loading {
-        display: none !important;
-    }
-</style>';
-}
+        #elementor-panel-state-loading {
+            display: none !important;
+        }
+    </style>';
+});
 
 
 
