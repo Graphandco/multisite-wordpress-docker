@@ -1,0 +1,163 @@
+/* Checkbox plus grandes : */
+#contact-form {
+    input[type='checkbox'] {
+        opacity: 0;
+        position: absolute;
+    }
+
+    input[type='checkbox'] + label {
+        position: relative;
+        overflow: hidden;
+        padding-left: 35px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    input[type='checkbox'] + label:before,
+    input[type='checkbox'] + label:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+    }
+
+    /* after */
+    input[type='checkbox']:not(:checked) + label:after {
+        width: 20px;
+        height: 20px;
+        border: 2px solid white;
+        top: 0px;
+    }
+
+    input[type='checkbox']:checked + label:after {
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--e-global-color-primary);
+        background-color: var(--e-global-color-primary);
+        z-index: 0;
+        border-radius: 2px;
+    }
+
+    /* before */
+    input[type='checkbox']:not(:checked) + label:before {
+        width: 0;
+        height: 0;
+        border: 3px solid transparent;
+        left: 6px;
+        top: 10px;
+        -webkit-transform: rotateZ(37deg);
+        transform: rotateZ(37deg);
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+    }
+
+    input[type='checkbox']:checked + label:before {
+        top: 0;
+        left: 1px;
+        width: 8px;
+        height: 13px;
+        margin-top: 3px;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        -webkit-transform: rotateZ(37deg);
+        transform: rotateZ(37deg);
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+    }
+}
+
+/*FORM*/
+// #gform_1 {
+//     .gfield_required {
+//         color: $link;
+//     }
+//     .name,
+//     .firstname,
+//     .email,
+//     .phone {
+//         input {
+//             border: none;
+//             background-color: rgba(white, 0.01);
+//             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+//             color: white;
+//         }
+//     }
+
+//     .question textarea {
+//         border: none;
+//         background-color: rgba(white, 0.01);
+//         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+//         color: white;
+//     }
+
+//     .comment,
+//     .birth {
+//         select {
+//             border: none;
+//             background-color: rgba(white, 0.01);
+//             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+//             color: white;
+//             padding: 10px 15px;
+
+//             option {
+//                 color: black;
+//             }
+//         }
+//     }
+
+//     .question-title,
+//     .photo,
+//     .confidentialite {
+//         margin-top: 5rem !important;
+//     }
+
+//     .gsection {
+//         margin-bottom: 0;
+//     }
+
+//     .gform_footer {
+//         text-align: center;
+
+//         .button {
+//             width: 300px;
+//             text-transform: uppercase;
+//             border: 1px solid white;
+//             margin-top: 2rem;
+//             transition: 0.3s;
+
+//             &:hover {
+//                 background-color: rgba(white, 0.1);
+//             }
+//         }
+//     }
+//     .gfield_error {
+//         background-color: transparent;
+//         border: none !important;
+//         #label_1_6_1 span {
+//             color: #c55353;
+//         }
+//     }
+//     .validation_error {
+//         border: none !important;
+//         color: #c55353 !important;
+//     }
+//     .validation_message,
+//     .gfield_error .gfield_label {
+//         color: #c55353;
+//     }
+// }
+
+// #gform_confirmation_message_1 {
+//     text-align: center;
+//     padding: 20px;
+//     margin: 5rem 0 5rem 0;
+//     font-size: 1.4rem;
+//     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45), 0 10px 10px rgba(0, 0, 0, 0.35);
+// }

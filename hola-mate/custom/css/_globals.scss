@@ -1,0 +1,234 @@
+body {
+    --primary: var(--e-global-color-primary);
+    --secondary: var(--e-global-color-secondary);
+    --text-color: var(--e-global-color-text);
+    --bg-color: var(--e-global-color-6152da7);
+    --text-font: var(--e-global-typography-primary-font-family);
+    --title-font: var(--e-global-typography-secondary-font-family);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex-grow: 1;
+}
+strong {
+    color: var(--e-global-color-accent);
+}
+#main {
+    max-width: 1200px !important;
+    @media screen and (max-width: 767px) {
+        padding-inline: 2vw;
+    }
+}
+.menu-item .elementor-item {
+    font-family: var(--title-font) !important;
+}
+.elementor-location-header {
+    position: relative;
+    z-index: 2;
+}
+.elementor-button-link {
+    font-family: var(--e-global-typography-primary-font-family) !important;
+    font-weight: 500 !important;
+}
+h1,
+.title-xl .elementor-heading-title {
+    font-family: var(--e-global-typography-secondary-font-family);
+    font-size: calc(clamp(33px, 15px + 3vw, 45px));
+    line-height: 1.1;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+}
+h1:after,
+.title-xl .elementor-heading-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 2px;
+    background-color: var(--primary);
+}
+.title-xl-white .elementor-heading-title:after {
+    background-color: white;
+}
+.title-lg .elementor-heading-title {
+    font-family: var(--e-global-typography-813d378-font-family);
+    font-size: calc(clamp(18px, 15px + 1vw, 25px)) !important;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.elementor-post__read-more {
+    font-weight: bold !important;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: white !important;
+
+    &:hover,
+    &:focus {
+        background-color: var(--secondary);
+    }
+}
+
+.elementor-widget-text-editor p:last-child {
+    margin-bottom: 0;
+}
+
+/***********************
+    ANIMATIONS
+***********************/
+body:not(.elementor-editor-active) {
+    .transform-left {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    .transform-right {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    .transform-top {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    .transform-bottom {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    .transform-opacity {
+        opacity: 0;
+    }
+}
+
+/***********************
+    ACTUS CONSEILS
+***********************/
+.quinconce-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'texte image';
+    align-items: center;
+    &:nth-child(even) {
+        grid-template-areas: 'image texte';
+        .quinconce-text {
+            padding-left: 20px;
+        }
+    }
+    &:nth-child(odd) {
+        .quinconce-text {
+            padding-right: 20px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        grid-template-areas: 'texte texte' 'image image' !important;
+        grid-template-columns: 1fr;
+        .quinconce-text {
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+    }
+
+    .quinconce-text {
+        grid-area: texte;
+        padding-block: 20px;
+    }
+    .quinconce-image {
+        grid-area: image;
+        height: 100%;
+        min-height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/***********************
+    SITEMAP
+***********************/
+.wsp-container h2 {
+    margin-top: 20px;
+    color: var(--e-global-color-secondary);
+}
+
+.wsp-container li a,
+.wsp-container strong {
+    font-size: 1rem;
+    color: var(--e-global-color-primary);
+    padding-left: 10px;
+}
+.wsp-container li a:hover {
+    color: var(--e-global-color-secondary);
+}
+
+.wsp-container li::marker {
+    color: var(--e-global-color-primary);
+    font-family: 'Font Awesome 5 Free';
+    content: '\f06c';
+    font-weight: 900;
+}
+
+/***********************
+    COOKIES BAR
+***********************/
+
+#cookie-notice .cookie-notice-container {
+    background-color: var(--e-global-color-primary);
+    font-family: var(--e-global-typography-primary-font-family);
+
+    .cn-button {
+        background-color: var(--e-global-color-secondary) !important;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--e-global-typography-primary-font-family) !important;
+        &:hover {
+            background-color: black !important;
+            color: inherit;
+        }
+    }
+    a {
+        color: inherit;
+        font-weight: bold;
+        &:hover {
+            color: black;
+        }
+    }
+}
+/*#cookie-notice .cn-close-icon:before, #cookie-notice .cn-close-icon:after {
+    background-color: var(--e-global-color-accent);;
+}*/
+
+/***********************
+    NOTIFICATIONS
+***********************/
+.woocommerce-notices-wrapper {
+    .woocommerce-message {
+        border-top-color: var(--secondary);
+        margin-top: 50px;
+
+        .button {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+
+            &:hover {
+                background-color: var(--secondary);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+/*** SMARTPHONE SIZE ***/
+@media screen and (max-width: 767px) {
+}

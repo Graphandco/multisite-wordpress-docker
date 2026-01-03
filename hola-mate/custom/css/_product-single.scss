@@ -1,0 +1,21 @@
+#type-conso,
+#intensite {
+    display: none;
+}
+.product_cat-mate {
+    #type-conso,
+    #intensite {
+        display: block;
+    }
+}
+.product_cat-boissons {
+    #intensite {
+        display: block;
+    }
+}
+// .product-quantity {
+//     width: fit-content;
+//     background-color: var(--primary);
+//     color: white;
+//     padding: 5px 15px;
+// }

@@ -1,0 +1,14 @@
+body:not(.elementor-editor-active) {
+    .appear-left {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    .appear-right {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    .appear-top {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}

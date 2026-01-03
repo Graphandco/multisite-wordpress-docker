@@ -1,0 +1,12 @@
+# Thèmes gérés par WordPress (updates auto)
+twentytwentyfive/
+hello-elementor/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Build tools éventuels
+node_modules/
+dist/
+.env

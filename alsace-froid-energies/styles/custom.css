@@ -1,0 +1,49 @@
+html {
+	scroll-behavior: smooth;
+}
+.jet-mega-menu-mega-container__inner {
+	padding: 0 !important;
+}
+.quinconce-wrapper {
+	display: grid;
+	gap: 25px;
+}
+.quinconce-bloc {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	align-items: center;
+	gap: 5vw;
+	@media screen and (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+}
+@media screen and (min-width: 768px) {
+	.quinconce-bloc:nth-child(even) .quinconce-text {
+		order: 2;
+	}
+}
+.text-only {
+	grid-template-columns: 1fr;
+}
+/* .snow {
+	position: relative;
+	isolation: isolate;
+	&:after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: url(../assets/flocons.png);
+		background-size: 25%;
+		opacity: 0.05;
+		z-index: -1;
+		pointer-events: none;
+		background-attachment: fixed;
+	}
+} */
+/* Tablette */
+@media screen and (max-width: 1024px) {
+}
+
+/* Smartphone */
+@media screen and (max-width: 767px) {
+}
