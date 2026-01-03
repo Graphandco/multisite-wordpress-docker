@@ -1,102 +1,136 @@
+@charset "UTF-8";
 html body {
-	min-height: 100vh;
-	overflow-x: hidden !important;
-	max-width: 100%;
-	display: flex;
-	flex-direction: column;
-	color: var(--e-global-color-text);
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--e-global-color-text);
 }
-.elementor-nav-menu .elementor-sub-item {
-	color: var(--e-global-color-secondary);
-}
+
 p {
-	word-break: break-word;
+  word-break: break-word;
 }
+
 main.site-main,
 .elementor-location-single {
-	flex-grow: 1;
+  flex-grow: 1;
 }
+
+.elementor-nav-menu .elementor-sub-item {
+  color: var(--e-global-color-secondary);
+}
+
 #header-section {
-	position: fixed;
+  position: fixed;
 }
+
 .modeles-wrapper {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
 }
+
+/*************************************************
+    HOMEPAGE 
+**************************************************/
 @media screen and (max-width: 1200px) {
-	.trois-guitares-home .elementor-column:first-child {
-		width: 100%;
-	}
-	.trois-guitares-home .elementor-column:nth-child(2) {
-		width: 50%;
-	}
-	.trois-guitares-home .elementor-column:last-child {
-		width: 50%;
-	}
+  .trois-guitares-home .elementor-column:first-child {
+    width: 100%;
+  }
+  .trois-guitares-home .elementor-column:nth-child(2) {
+    width: 50%;
+  }
+  .trois-guitares-home .elementor-column:last-child {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 850px) {
-	.trois-guitares-home .elementor-column:nth-child(2) {
-		width: 100%;
-	}
-	.trois-guitares-home .elementor-column:last-child {
-		width: 100%;
-	}
+  .trois-guitares-home .elementor-column:nth-child(2) {
+    width: 100%;
+  }
+  .trois-guitares-home .elementor-column:last-child {
+    width: 100%;
+  }
 }
+/*************************************************
+    GUITARE ARCHIVE CPT 
+**************************************************/
 .guitare-archive-list .jet-smart-tiles__box {
-	padding: 5px;
+  padding: 5px;
 }
+
+/*************************************************
+    GUITARE SINGLE CPT 
+**************************************************/
 .caracteristiques {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 10px 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 2rem;
 }
 @media (max-width: 650px) {
-	.caracteristiques {
-		grid-template-columns: 1fr;
-	}
+  .caracteristiques {
+    grid-template-columns: 1fr;
+  }
 }
 .caracteristiques > div {
-	display: flex;
-	align-items: center;
-	color: var(--e-global-color-text);
-	font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  color: var(--e-global-color-text);
+  font-size: 0.9rem;
 }
 .caracteristiques > div i {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 .caracteristiques > div span {
-	margin-left: 8px;
+  margin-left: 8px;
 }
+
+/*Légende de la lightbox*/
 footer.elementor-slideshow__footer {
-	display: none !important;
+  display: none !important;
 }
+
 @media screen and (min-width: 1024px) {
-	.home-lead .elementor-background-overlay {
-		display: none !important;
-	}
+  .home-lead .elementor-background-overlay {
+    display: none !important;
+  }
 }
+/***********************
+    COOKIES BAR
+***********************/
+/***********************
+    COOKIES BAR
+***********************/
 #cookie-notice .cookie-notice-container {
-	background-color: var(--e-global-color-primary) !important;
-	font-family: var(--e-global-typography-primary-font-family);
+  background-color: var(--e-global-color-primary) !important;
+  font-family: var(--e-global-typography-primary-font-family);
 }
+
 #cookie-notice .cookie-notice-container .cn-button {
-	background-color: var(--e-global-color-secondary) !important;
-	border-radius: 50% !important;
-	width: 35px;
-	height: 35px;
-	display: inline-flex !important;
-	justify-content: center;
-	align-items: center;
+  background-color: var(--e-global-color-secondary) !important;
+  border-radius: 50% !important;
+  width: 35px;
+  height: 35px;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
 }
+
 #cookie-notice .cookie-notice-container a {
-	color: inherit;
-	font-weight: bold;
+  color: inherit;
+  font-weight: bold;
 }
+
 #cookie-notice .cookie-notice-container a:hover {
-	color: #000;
+  color: black;
 }
+
 #cookie-notice .cookie-notice-container .cn-button:hover {
-	background-color: #000;
-	color: inherit;
-} /*# sourceMappingURL=style.css.map */
+  background-color: black;
+  color: inherit;
+}
+
+/*#cookie-notice .cn-close-icon:before, #cookie-notice .cn-close-icon:after {
+  background-color: var(--e-global-color-accent);;
+}*//*# sourceMappingURL=style.css.map */
