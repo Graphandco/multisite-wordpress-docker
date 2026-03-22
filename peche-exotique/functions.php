@@ -19,13 +19,15 @@ function custom_login_logo() {
             background-size: cover;
             background-position: center;
         }
-
         .login h1 a {
             background-image: url('$logo') !important;
             background-size: contain;
             background-repeat: no-repeat;
             width: 300px;
             height: 80px;
+        }
+        .language-switcher {
+            display: none;
         }
     </style>
     ";
