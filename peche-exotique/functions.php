@@ -29,6 +29,11 @@ function custom_login_logo() {
         .language-switcher {
             display: none;
         }
+        #loginform {
+            background: #323232;
+            color: white;
+            border-radius: 15px;
+        }
     </style>
     ";
 }
