@@ -4,6 +4,36 @@
 // @error_reporting(E_ALL);
 
 /*********************
+	 LOGIN PAGE
+**********************/
+
+function custom_login_logo() {
+
+    $logo = get_stylesheet_directory_uri() . '/images/login-logo.png';
+    $bg   = get_stylesheet_directory_uri() . '/images/login-bg.jpg';
+
+    echo "
+    <style>
+        body.login {
+            background-image: url('$bg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login h1 a {
+            background-image: url('$logo');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 300px;
+            height: 80px;
+        }
+    </style>
+    ";
+}
+
+add_action('login_enqueue_scripts', 'custom_login_logo');
+
+/*********************
 	 ACTIVATION THEME
 **********************/
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
