@@ -34,6 +34,11 @@ function custom_login_logo() {
             color: white;
             border-radius: 15px;
         }
+        .login h1 a {
+            background-size: 120px;
+            height: 120px;
+            width: 120px;
+        }
     </style>
     ";
 }
