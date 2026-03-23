@@ -21,13 +21,13 @@ function custom_login_logo() {
             position: relative;
             isolation: isolate;
         }
-        .login::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-color: rgba(255, 255, 255, 0.5);
-            z-index: -1;
-        }
+        // .login::before {
+        //     content: '';
+        //     position: absolute;
+        //     inset: 0;
+        //     background-color: rgba(255, 255, 255, 0.5);
+        //     z-index: -1;
+        // }
         .login h1 a {
             background-image: url('$logo') !important;
             background-size: contain;
@@ -47,6 +47,12 @@ function custom_login_logo() {
             background-size: 120px !important;
             height: 120px !important;
             width: 120px !important;
+        }
+        # login p a {
+            color: white;
+            background: #323232;
+            padding: 5px 10px;
+            border-radius: 15px;
         }
     </style>
     ";
