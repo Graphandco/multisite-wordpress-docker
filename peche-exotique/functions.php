@@ -18,6 +18,15 @@ function custom_login_logo() {
             background-image: url('$bg');
             background-size: cover;
             background-position: center;
+            position: relative;
+            isolation: isolate;
+        }
+        .login::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: -1;
         }
         .login h1 a {
             background-image: url('$logo') !important;
@@ -35,9 +44,9 @@ function custom_login_logo() {
             border-radius: 15px;
         }
         .login h1 a {
-            background-size: 120px;
-            height: 120px;
-            width: 120px;
+            background-size: 120px !important;
+            height: 120px !important;
+            width: 120px !important;
         }
     </style>
     ";
