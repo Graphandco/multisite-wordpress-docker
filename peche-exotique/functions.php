@@ -8,23 +8,51 @@
 **********************/
 
 function peche_login_styles() {
-
     wp_enqueue_style(
         'peche-login',
         get_stylesheet_directory_uri() . '/custom/login.css',
         [],
         '1.0'
     );
-
 }
 add_action('login_enqueue_scripts', 'peche_login_styles');
 
 add_filter('login_headerurl', function () {
     return home_url();
 });
+
 add_filter('login_headertext', function () {
     return get_bloginfo('name');
 });
+
+/*********************
+	 LOGIN REWRITE
+**********************/
+function login_rewrite() {
+    add_rewrite_rule(
+        '^connexion/?$',
+        'wp-login.php',
+        'top'
+    );
+}
+add_action('init', 'login_rewrite');
+
+function rerite_login_url($login_url, $redirect) {
+    return home_url('/connexion');
+}
+add_filter('login_url', 'rerite_login_url', 10, 2);
+
+/*********************
+	 BLOCK LOGIN URL
+**********************/
+function block_default_login() {
+    $request = basename($_SERVER['REQUEST_URI']);
+    if ($request === 'wp-login.php' && !isset($_GET['action'])) {
+        wp_redirect(home_url('/connexion'));
+        exit;
+    }
+}
+add_action('init', 'block_default_login');
 
 /*********************
 	 ACTIVATION THEME
