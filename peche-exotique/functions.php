@@ -47,12 +47,13 @@ function custom_login_logo() {
             background-size: 120px !important;
             height: 120px !important;
             width: 120px !important;
+            pointer-events: none;
         }
         #login p a {
-            color: white;
+            color: white !important;
             background: #323232;
-            padding: 5px 10px;
-            border-radius: 15px;
+            padding: 2px 5px;
+            border-radius: 5px;
         }
     </style>
     ";
