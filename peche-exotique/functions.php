@@ -28,31 +28,83 @@ add_filter('login_headertext', function () {
 /*********************
 	 LOGIN REWRITE
 **********************/
-function login_rewrite() {
+
+function gc_login_slug() {
+    return 'connexion';
+}
+
+/*
+ * Rediriger wp-login.php
+ */
+function gc_hide_wp_login() {
+
+    $login_slug = gc_login_slug();
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    // accès direct à wp-login.php
+    if (strpos($request_uri, 'wp-login.php') !== false) {
+
+        // autoriser certaines actions internes
+        if (isset($_GET['action']) && in_array($_GET['action'], [
+            'logout',
+            'lostpassword',
+            'rp',
+            'resetpass'
+        ])) {
+            return;
+        }
+
+        wp_redirect(home_url('/' . $login_slug . '/'));
+        exit;
+    }
+
+}
+
+add_action('init', 'gc_hide_wp_login');
+
+
+/*
+ * Route /connexion
+ */
+function gc_login_rewrite() {
+
     add_rewrite_rule(
-        '^connexion/?$',
+        '^' . gc_login_slug() . '/?$',
         'wp-login.php',
         'top'
     );
-}
-add_action('init', 'login_rewrite');
 
-function rerite_login_url($login_url, $redirect) {
-    return home_url('/connexion');
 }
-add_filter('login_url', 'rerite_login_url', 10, 2);
 
-/*********************
-	 BLOCK LOGIN URL
-**********************/
-function block_default_login() {
-    $request = basename($_SERVER['REQUEST_URI']);
-    if ($request === 'wp-login.php' && !isset($_GET['action'])) {
-        wp_redirect(home_url('/connexion'));
-        exit;
+add_action('init', 'gc_login_rewrite');
+
+
+/*
+ * Modifier les liens login
+ */
+add_filter('login_url', function($login_url) {
+
+    return home_url('/' . gc_login_slug() . '/');
+
+});
+
+
+/*
+ * Flush automatique une fois
+ */
+function gc_flush_rewrite_once() {
+
+    if (get_site_option('gc_login_flush') !== 'done') {
+
+        flush_rewrite_rules();
+        update_site_option('gc_login_flush', 'done');
+
     }
+
 }
-add_action('init', 'block_default_login');
+
+add_action('init', 'gc_flush_rewrite_once');
+
 
 /*********************
 	 ACTIVATION THEME
