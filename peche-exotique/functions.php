@@ -7,15 +7,15 @@
 	 LOGIN PAGE
 **********************/
 
-function peche_login_styles() {
+function custom_login_styles() {
     wp_enqueue_style(
-        'peche-login',
+        'custom-login',
         get_stylesheet_directory_uri() . '/custom/login.css',
         [],
         '1.0'
     );
 }
-add_action('login_enqueue_scripts', 'peche_login_styles');
+add_action('login_enqueue_scripts', 'custom_login_styles');
 
 add_filter('login_headerurl', function () {
     return home_url();
