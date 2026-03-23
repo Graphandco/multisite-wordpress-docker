@@ -7,59 +7,24 @@
 	 LOGIN PAGE
 **********************/
 
-function custom_login_logo() {
+function peche_login_styles() {
 
-    $logo = get_stylesheet_directory_uri() . '/images/login-logo.png';
-    $bg   = get_stylesheet_directory_uri() . '/images/login-bg.jpg';
+    wp_enqueue_style(
+        'peche-login',
+        get_stylesheet_directory_uri() . '/custom/login.css',
+        [],
+        '1.0'
+    );
 
-    echo "
-    <style>
-        body.login {
-            background-image: url('$bg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            isolation: isolate;
-        }
-        // .login::before {
-        //     content: '';
-        //     position: absolute;
-        //     inset: 0;
-        //     background-color: rgba(255, 255, 255, 0.5);
-        //     z-index: -1;
-        // }
-        .login h1 a {
-            background-image: url('$logo') !important;
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 300px;
-            height: 80px;
-        }
-        .language-switcher {
-            display: none;
-        }
-        #loginform {
-            background: #323232;
-            color: white;
-            border-radius: 15px;
-        }
-        .login h1 a {
-            background-size: 120px !important;
-            height: 120px !important;
-            width: 120px !important;
-            pointer-events: none;
-        }
-        #login p a {
-            color: white !important;
-            background: #323232;
-            padding: 2px 5px;
-            border-radius: 5px;
-        }
-    </style>
-    ";
 }
+add_action('login_enqueue_scripts', 'peche_login_styles');
 
-add_action('login_enqueue_scripts', 'custom_login_logo');
+add_filter('login_headerurl', function () {
+    return home_url();
+});
+add_filter('login_headertext', function () {
+    return get_bloginfo('name');
+});
 
 /*********************
 	 ACTIVATION THEME
