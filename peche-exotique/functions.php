@@ -48,7 +48,7 @@ function custom_login_logo() {
             height: 120px !important;
             width: 120px !important;
         }
-        # login p a {
+        #login p a {
             color: white;
             background: #323232;
             padding: 5px 10px;
