@@ -25,7 +25,10 @@ add_filter('login_headertext', function () {
 function gc_hide_admin_menus_for_editors() {
     if (current_user_can('editor') && !current_user_can('administrator')) {
         remove_menu_page('tools.php'); // Outils
-        remove_menu_page('wpseo_dashboard'); // Yoast SEO
+        remove_menu_page('wpseo_dashboard'); // Yoast principal
+        remove_menu_page('wpseo_workouts');
+        remove_menu_page('wpseo_redirects');
+        remove_menu_page('wpseo_settings');
     }
 }
 add_action('admin_menu', 'gc_hide_admin_menus_for_editors', 999);
