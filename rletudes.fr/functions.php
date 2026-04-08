@@ -24,6 +24,7 @@ add_filter('login_headertext', function () {
 // HIDE ADMIN MENUS FOR EDITORS
 function gc_hide_admin_menus_for_editors() {
     if (current_user_can('editor') && !current_user_can('administrator')) {
+        remove_menu_page('edit.php'); // Articles
         remove_menu_page('tools.php'); // Outils
         remove_menu_page('wpseo_dashboard'); // Yoast principal
         remove_menu_page('wpseo_workouts');
