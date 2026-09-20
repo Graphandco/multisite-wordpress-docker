@@ -21,13 +21,13 @@ function theme_enqueue_styles() {
 //     return $new_text;
 // }
 
-// add_action('elementor/editor/after_enqueue_styles', function() {
-//     echo '<style>
-//         #elementor-panel-state-loading {
-//             display: none !important;
-//         }
-//     </style>';
-// });
+add_action('elementor/editor/after_enqueue_styles', function() {
+    echo '<style>
+        #elementor-panel-state-loading {
+            display: none !important;
+        }
+    </style>';
+});
 
 
 
