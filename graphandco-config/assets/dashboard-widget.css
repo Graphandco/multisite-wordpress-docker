@@ -1,0 +1,106 @@
+/* Widget tableau de bord — Convert Image */
+.graphandco-dashboard-convert {
+	padding: 4px 2px 8px;
+}
+
+.graphandco-dashboard-convert__visual {
+	display: block;
+	border-radius: 6px;
+	overflow: hidden;
+	line-height: 0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.graphandco-dashboard-convert__visual img {
+    width: 250px;
+    max-width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    height: auto;
+}
+
+.graphandco-dashboard-convert__text {
+	margin: 12px 0 10px;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #50575e;
+}
+
+.graphandco-dashboard-convert__action {
+	margin: 0;
+}
+
+/* Widget tableau de bord — Contact Graph and Co */
+.graphandco-dashboard-contact {
+	padding: 4px 2px 8px;
+	font-size: 13px;
+	line-height: 1.45;
+	color: #50575e;
+}
+
+.graphandco-dashboard-contact__brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.graphandco-dashboard-contact__logo {
+	width: auto;
+	max-width: 100px;
+	max-height: 36px;
+	height: auto;
+	display: block;
+	flex-shrink: 0;
+}
+
+.graphandco-dashboard-contact__name {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.graphandco-dashboard-contact__intro {
+	margin: 0 0 12px;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #646970;
+	font-style: italic;
+}
+
+.graphandco-dashboard-contact__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.graphandco-dashboard-contact__list li {
+	margin: 0 0 10px;
+}
+
+.graphandco-dashboard-contact__list li:last-child {
+	margin-bottom: 0;
+}
+
+.graphandco-dashboard-contact__label {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	color: #787c82;
+	margin-bottom: 2px;
+}
+
+.graphandco-dashboard-contact__list a {
+	text-decoration: none;
+	word-break: break-word;
+}
+
+.graphandco-dashboard-contact__list a:hover,
+.graphandco-dashboard-contact__list a:focus {
+	text-decoration: underline;
+}
